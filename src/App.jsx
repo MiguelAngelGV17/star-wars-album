@@ -1,8 +1,8 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import MiAlbum from "./pages/MiAlbum";
-import ObtenerLaminas from "./pages/ObtenerLaminas";
+import Navbar from "./components/NavbarComponent";
+import MiAlbum from "./pages/MiAlbumPage";
+import ObtenerLaminas from "./pages/ObtenerLaminasPage";
 
 function App() {
   return (

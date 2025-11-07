@@ -7,13 +7,16 @@ const Navbar = () => {
   return (
     <div>
       <div data-bs-theme="dark">
-        <header className="d-flex justify-content-around">
-          <aside className="d-flex flex-column  me-auto mb-4">
+        <header className="d-flex">
+          <aside className="d-flex flex-column me-auto mb-4">
             <h1 className="mb-0 text-warning">STAR WARS</h1>
-            <span>Album digital</span>
+            <span>Álbum digital</span>
           </aside>
-          <aside>
-            <Nav defaultActiveKey="/mi-album" className="fw-bold">
+          <aside className="ms-auto">
+            <Nav
+              defaultActiveKey="/mi-album"
+              className="fw-bold justify-content-end"
+            >
               <Nav.Item>
                 <Nav.Link
                   as={NavLink}
@@ -33,7 +36,7 @@ const Navbar = () => {
                   className="text-white d-flex align-items-center gap-2"
                 >
                   <MdCollections />
-                  Mi Album
+                  Mi Álbum
                 </Nav.Link>
               </Nav.Item>
             </Nav>
