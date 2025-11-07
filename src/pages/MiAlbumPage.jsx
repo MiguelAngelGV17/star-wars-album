@@ -63,85 +63,6 @@ const MiAlbum = () => {
   }, []);
 
   return (
-    // <Tabs
-    //   id="controlled-tab-example"
-    //   activeKey={key}
-    //   onSelect={(k) => setKey(k)}
-    //   className="mb-3"
-    //   fill
-    //   data-bs-theme="dark"
-    // >
-    //   <Tab
-    //     eventKey="películas"
-    //     title={
-    //       <div className="d-flex align-items-center justify-content-center">
-    //         <BiCameraMovie className="me-2" />
-    //         Películas
-    //       </div>
-    //     }
-    //   >
-    //     <article>
-    //       <LaminaComponent data={[]} />
-    //     </article>
-    //   </Tab>
-    //   <Tab
-    //     eventKey="personajes"
-    //     title={
-    //       <div className="d-flex align-items-center justify-content-center">
-    //         <BsPeopleFill className="me-2" />
-    //         Personajes
-    //       </div>
-    //     }
-    //   >
-    //     Tab content for Personajes
-    //   </Tab>
-    //   <Tab
-    //     eventKey="naves"
-    //     title={
-    //       <div className="d-flex align-items-center justify-content-center">
-    //         <RiSpaceShipFill className="me-2" />
-    //         Naves
-    //       </div>
-    //     }
-    //   >
-    //     Tab content for Naves
-    //   </Tab>
-    // </Tabs>
-    // <Tabs
-    //   id="controlled-tab-example"
-    //   activeKey={key}
-    //   onSelect={(k) => setKey(k)}
-    //   className="mb-3"
-    //   fill
-    //   data-bs-theme="dark"
-    // >
-    //   {secciones.map((sec) => (
-    //     <Tab
-    //       key={sec.name}
-    //       eventKey={sec.label}
-    //       title={
-    //         <div className="d-flex align-items-center justify-content-center">
-    //           {sec.icon}
-    //           {sec.label}
-    //         </div>
-    //       }
-    //     >
-    //       <article
-    //         className="text-light"
-    //         style={{
-    //           height: "calc(100vh - 210px)",
-    //           overflow: "auto",
-    //         }}
-    //       >
-    //         {sections[sec.name] ? (
-    //           <LaminaComponent data={sections[sec.name]} />
-    //         ) : (
-    //           <p>Cargando {sec.label.toLowerCase()}...</p>
-    //         )}
-    //       </article>
-    //     </Tab>
-    //   ))}
-    // </Tabs>
     <Tabs
       id="controlled-tab-example"
       activeKey={key}
@@ -164,15 +85,10 @@ const MiAlbum = () => {
           <article
             className="text-light"
             style={{
-              height: "calc(100vh - 210px)",
+              height: "calc(100vh - 215px)",
               overflow: "auto",
             }}
           >
-            {/* {sections[sec.name] ? (
-              <LaminaComponent data={sections[sec.name]} />
-            ) : (
-              <p>Cargando {sec.label.toLowerCase()}...</p>
-            )} */}
             <LaminaComponent data={sec} />
           </article>
         </Tab>
