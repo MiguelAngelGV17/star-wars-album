@@ -4,11 +4,15 @@
   padding: 2rem;
   text-align: start;
   color-scheme: dark;
+
+  height: 100%;
 }
 
 body {
   background-color: #121212;
   color: #f8f9fa;
+  height: 100%;
+  overflow: hidden;
 }
 
 .nav-item .nav-link.active {

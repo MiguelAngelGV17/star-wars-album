@@ -56,8 +56,8 @@ const MiAlbum = () => {
             <article
               className="text-light"
               style={{
-                height: "calc(100vh - 215px)",
-                overflow: "auto",
+                height: "calc(100vh - 260px)",
+                overflowY: "auto",
               }}
             >
               <LaminaComponent data={sec} limpiarData={key} />
