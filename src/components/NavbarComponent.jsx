@@ -42,7 +42,6 @@ const Navbar = () => {
             </Nav>
           </aside>
         </header>
-        <div className="w-100">{/* <SectionsComponent /> */}</div>
       </div>
     </div>
   );

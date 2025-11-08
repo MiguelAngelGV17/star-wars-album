@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Spinner } from "react-bootstrap";
 import { FaQuestion } from "react-icons/fa";
 import { useFetchIdMappings } from "../hooks/useFetchIdMappings";
 import { temporizadorParaSobre } from "../store/temporizadorStore";
@@ -40,7 +40,6 @@ const configuraciónDos = [
 ];
 
 const ObtenerLaminas = () => {
-  const [contenedorDeIds, setContenedorDeIds] = useState([]);
   const { idMappings, loading } = useFetchIdMappings();
 
   const { inhabilitarSobre, tiempoRestante, iniciarTemporizador } =
@@ -69,10 +68,9 @@ const ObtenerLaminas = () => {
       return { sección: item.name, ids };
     });
 
-    setContenedorDeIds(nuevoSobre);
     setLaminasDelSobre(nuevoSobre);
     toggleOffcanvas(true);
-    iniciarTemporizador(1);
+    iniciarTemporizador(60);
   };
 
   useEffect(() => {
@@ -96,24 +94,36 @@ const ObtenerLaminas = () => {
             uno nuevo.
           </p>
         )}
-        {Array.from({ length: 4 }).map((_, indice) => (
-          <Col
-            sm={25}
-            key={indice}
-            className={`card sobre p-2 bg-dark text-light ${
-              inhabilitarSobre ? "opacity-50" : ""
-            }`}
-            style={{
-              height: "160px",
-              width: "140px",
-              pointerEvents: inhabilitarSobre ? "none" : "auto",
-              transition: "opacity 0.3s ease",
-            }}
-            onClick={generarSobre}
-          >
-            <FaQuestion size={90} className="m-auto question text-secondary" />
-          </Col>
-        ))}
+        {loading ? (
+          <div className="d-flex flex-column align-items-center justify-content-center mt-4 gap-2">
+            <Spinner animation="border" variant="light" />
+            <span>Cargando información de las láminas, por favor espera.</span>
+          </div>
+        ) : (
+          <>
+            {Array.from({ length: 4 }).map((_, indice) => (
+              <Col
+                sm={25}
+                key={indice}
+                className={`card sobre p-2 bg-dark text-light ${
+                  inhabilitarSobre ? "opacity-50" : ""
+                }`}
+                style={{
+                  height: "160px",
+                  width: "140px",
+                  pointerEvents: inhabilitarSobre ? "none" : "auto",
+                  transition: "opacity 0.3s ease",
+                }}
+                onClick={generarSobre}
+              >
+                <FaQuestion
+                  size={90}
+                  className="m-auto question text-secondary"
+                />
+              </Col>
+            ))}
+          </>
+        )}
       </Row>
       <LaminasDelSobre />
     </>

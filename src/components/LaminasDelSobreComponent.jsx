@@ -34,13 +34,13 @@ const LaminasDelSobre = () => {
 
   useEffect(() => {
     const fetchDatos = async () => {
-      if (!laminasDelSobre.length || !idMappings) return;
+      if (!laminasDelSobre.length || !idMappings || loading) return;
       setCargando(true);
 
       const especiales = {
-        films: new Set(idMappings.films), // todas las películas
-        people: new Set(idMappings.people.slice(0, 20)), // primeras 20
-        starships: new Set(idMappings.starships.slice(0, 10)), // primeras 10
+        films: new Set(idMappings?.films), // todas las películas
+        people: new Set(idMappings?.people.slice(0, 20)), // primeras 20
+        starships: new Set(idMappings?.starships.slice(0, 10)), // primeras 10
       };
 
       const peticiones = laminasDelSobre.flatMap((grupo) =>
@@ -147,7 +147,8 @@ const LaminasDelSobre = () => {
                             item.seccion,
                             item.numero,
                             item.idEnApi,
-                            item.tipo
+                            item.tipo,
+                            item.name || item.title
                           );
                           marcarAcción(item.seccion, item.idEnApi);
                         }}

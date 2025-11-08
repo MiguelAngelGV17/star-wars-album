@@ -30,12 +30,6 @@ export const temporizadorParaSobre = create(
 
         set({ intervalo: idIntervalo });
       },
-
-      // reiniciarTemporizador: () => {
-      //   const { intervalo } = get();
-      //   if (intervalo) clearInterval(intervalo);
-      //   set({ tiempoRestante: 0, inhabilitarSobre: false, intervalo: null });
-      // },
     }),
     {
       name: "timer-storage",
