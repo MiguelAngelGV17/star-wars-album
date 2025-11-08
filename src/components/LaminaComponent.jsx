@@ -32,12 +32,12 @@ const LaminaComponent = ({ data, limpiarData }) => {
     return (
       <>
         <button
-          className="btn btn-secondary mt-1 position-fixed"
+          className="btn btn-secondary mt-1"
           onClick={() => setInfoDeLamina(null)}
         >
           Volver al álbum
         </button>
-        <div className="d-flex mt-5 ">
+        <div className="d-flex">
           <LaminaInfoComponent data={infoDeLamina} />
         </div>
       </>
