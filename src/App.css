@@ -20,6 +20,25 @@ body {
   font-weight: bold;
 }
 
+/* Evita que los tabs hagan wrap y permite scroll horizontal */
+.nav-tabs {
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: thin;
+}
+
+/* Oculta la barra de scroll horizontal en navegadores basados en Webkit (opcional) */
+.nav-tabs::-webkit-scrollbar {
+  height: 6px;
+}
+
+.nav-tabs::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
 .question,
 .card.sobre {
   will-change: filter;

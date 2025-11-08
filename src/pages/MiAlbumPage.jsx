@@ -54,9 +54,9 @@ const MiAlbum = () => {
             }
           >
             <article
-              className="text-light"
+              className="text-light flex-grow-1"
               style={{
-                height: "calc(100vh - 260px)",
+                height: "calc(100vh - 300px)",
                 overflowY: "auto",
               }}
             >
